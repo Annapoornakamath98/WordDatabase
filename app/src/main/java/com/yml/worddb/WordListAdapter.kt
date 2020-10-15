@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class WordListAdapter internal constructor(val ulist:ArrayList<String>):RecyclerView.Adapter<WordListAdapter.WordViewHolder>(){
     //private val inflater:LayoutInflater= LayoutInflater.from(p)
-    private var words= emptyList<Wordc>()
+    //private var words= emptyList<Wordc>()
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int

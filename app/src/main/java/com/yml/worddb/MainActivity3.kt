@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 
 class MainActivity3 : AppCompatActivity() {
+
     private lateinit var editr:EditText
     private lateinit var roomRecyclerView: RecyclerView
     private lateinit var database: WordRoomDatabase
@@ -28,6 +29,7 @@ class MainActivity3 : AppCompatActivity() {
         fun insertData(item:Wordc){
             Thread{
                 database.wordDao().insert(item)
+                //database.wordDao().deleteAll()
 
             }.start()
         }
@@ -44,7 +46,7 @@ class MainActivity3 : AppCompatActivity() {
                         roomRecyclerView.adapter=WordListAdapter(uList)
                     }
                 }
-            }
+            }.start()
 
         }
         roomdoneb.setOnClickListener {
@@ -53,6 +55,7 @@ class MainActivity3 : AppCompatActivity() {
         }
         roomdis.setOnClickListener {
             readData()
+
         }
 
 
