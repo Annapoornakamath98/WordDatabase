@@ -16,5 +16,6 @@ class MainActivity3 : AppCompatActivity() {
         val adapter=WordListAdapter(this)
         recyclerView.adapter=adapter
         recyclerView.layoutManager=LinearLayoutManager(this)
+
     }
 }
