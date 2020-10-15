@@ -7,14 +7,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class WordListAdapter internal constructor(context: Context):RecyclerView.Adapter<WordListAdapter.WordViewHolder>(){
-    private val inflater:LayoutInflater= LayoutInflater.from(context)
+class WordListAdapter internal constructor(val ulist:ArrayList<String>):RecyclerView.Adapter<WordListAdapter.WordViewHolder>(){
+    //private val inflater:LayoutInflater= LayoutInflater.from(p)
     private var words= emptyList<Wordc>()
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): WordListAdapter.WordViewHolder {
-        val itemView=inflater.inflate(R.layout.room_wordlist,parent,false)
+    ): WordViewHolder {
+        val itemView=LayoutInflater.from(parent.context).inflate(R.layout.room_wordlist,parent,false)
+        //val itemView=inflater.inflate(R.layout.room_wordlist,parent,false)
         return WordViewHolder(itemView)
     }
 
@@ -23,17 +24,18 @@ class WordListAdapter internal constructor(context: Context):RecyclerView.Adapte
 
     }
 
-    override fun onBindViewHolder(holder: WordListAdapter.WordViewHolder, position: Int) {
-        val current=words[position]
-        holder.wordItemView.text=current.word
+    override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
+//        val current=words[position]
+//        holder.wordItemView.text=current.word
+        holder.wordItemView.text= ulist[position].toString()
     }
-    internal fun setWords(words:List<Wordc>){
-        this.words=words
-        notifyDataSetChanged()
-    }
+//    internal fun setWords(words:List<Wordc>){
+//        this.words=words
+//        notifyDataSetChanged()
+//    }
 
     override fun getItemCount(): Int {
-        return words.size
+        return ulist.size
     }
 
 }

@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         show=findViewById(R.id.show)
         editText=findViewById(R.id.edit)
         textView=findViewById(R.id.text)
-        roomBtn=findViewById(R.id.roomBtn)
+        roomBtn=findViewById(R.id.roomB)
         roomBtn.setOnClickListener {
             intent= Intent(applicationContext,MainActivity3::class.java)
             startActivity(intent)
